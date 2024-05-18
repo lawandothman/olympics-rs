@@ -19,6 +19,7 @@ enum SportId {
     Badminton,
     BaseballSoftball,
     Basketball,
+    #[graphql(name = "BASKETBALL_3X3")]
     Basketball3x3,
     BeachHandball,
     BeachVolleyball,
