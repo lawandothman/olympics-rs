@@ -6,7 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-async-graphql = "7.0.5"
+async-graphql = {version = "7.0.5", features=["chrono"]}
 async-graphql-poem = "7.0.5"
+chrono = "0.4.38"
 poem = "3.0.0"
 tokio = { version = "1.37.0", features = ["rt-multi-thread"] }
