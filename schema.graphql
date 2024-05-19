@@ -16,6 +16,7 @@ type Day {
 
 enum SportId {
     ARCHERY
+    ATHLETICS
     SPORT_CLIMBING
     # To complete
 }
