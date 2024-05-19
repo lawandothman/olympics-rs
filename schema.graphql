@@ -1,0 +1,41 @@
+scalar DateTime
+  @specifiedBy(url: "https://scalars.graphql.org/andimarek/date-time")
+
+type Query {
+    events: [Event!]! # All events (we will need pagination and filtering here)
+    event(id: ID!): Event
+    sports: [Sport!]! # All sports (likely some pagination here or somethign)
+    sport(id: SportId!): Sport!
+    schedule(day: DateTime): Day
+}
+
+# A day of events
+type Day {
+    events: [Event!]!
+}
+
+enum SportId {
+    ARCHERY
+    SPORT_CLIMBING
+    # To complete
+}
+
+type Sport {
+    id: SportId!
+    name: String!
+    events: [Event!]!
+    # We could maybe add a days list here
+}
+
+type Event {
+    sport: Sport!
+    name: String!
+    time: DateTime! # ISO String UTC Time 
+    location: Location!
+}
+
+type Location {
+    id: ID!
+    name: String!
+    events: [Event!]!
+}
